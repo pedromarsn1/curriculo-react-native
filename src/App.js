@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, SafeAreaView, Alert, TouchableOpacity } from 'react-native';
 import foto from '../assets/pedro.jpg'
+import Card from './components/Card/Index';
 import Icon, { Github } from 'react-native-vector-icons/Feather'
 
 export default function App() {
@@ -27,40 +28,31 @@ export default function App() {
         <Text style={styles.nome}>PEDRO NASCIMENTO</Text>
         <Text style={styles.funcao}>Intern Developer at Sophos7</Text>
         <View style={styles.redes_sociais}>
-          <TouchableOpacity onPress={()=> handleRedeSocial('github')}>
+          <TouchableOpacity onPress={() => handleRedeSocial('github')}>
             <Icon size={24} name='github' />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={()=> handleRedeSocial('instagram')}>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => handleRedeSocial('instagram')}>
             <Icon size={24} name='instagram' />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={()=> handleRedeSocial('linkedin')}>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => handleRedeSocial('linkedin')}>
             <Icon size={24} name='linkedin' />
           </TouchableOpacity>
         </View>
       </View>
 
-      <View style={styles.card_container}>
-        <View style={styles.card}>
-          <View style={styles.card_header}>
-            <Text style={styles.card_title}>Experiência Profissional</Text>
-          </View>
-          <View style={styles.card_content}>
-            <Text>Sophos7 Sistemas de Gestão</Text>
-            <Text>RM Express</Text>
-          </View>
-        </View>
-      </View>
+      <Card titulo="Formação acadêmica" >
 
-      <View style={styles.card_container}>
-        <View style={styles.card}>
-          <View style={styles.card_header}>
-            <Text style={styles.card_title}>Formação acadêmica</Text>
-          </View>
-          <View style={styles.card_content}>
-            <Text>Análise e Desenvolvimento de Sistemas (2021-2023) </Text>
-          </View>
-        </View>
-      </View>
+        <Text>Análise e Desenvolvimento de Sistemas (2021-2023) </Text>
+
+      </Card>
+      <Card titulo="Esperiências Profissionais">
+
+        <Text>Sophos 7 Sistemas Inteligentes</Text>
+        <Text>RM Express</Text>
+
+      </Card>
+
+
     </View>
 
   );
@@ -97,31 +89,5 @@ const styles = StyleSheet.create({
     width: '30%',
     marginTop: 15
   },
-  card: {
-    borderRadius: 5,
-    borderWidth: 2,
-    borderColor: '#939393',
-    padding: 10,
-    backgroundColor: '#fff',
-    width: '50%'
-
-  },
-  card_content: {
-    marginTop: 10,
-    color: '939393'
-  },
-  card_header: {
-
-  },
-  card_container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    marginTop: 20
-  },
-  card_title: {
-    fontSize: 20,
-    fontWeight: 'bold'
-  }
 
 });
